@@ -1,0 +1,36 @@
+                    <div class="box">
+                        <div class="box-header">分类</div>
+                        <ul class="unstyled item-list">
+                            {%for x in categorys%}
+                             <li>
+                                <a href="/category/{{x.name}}/" title="{{x.name}}">{{x.name}}</a>
+                            </li>
+                            {%endfor%}
+                        </ul>
+                    </div>
+                    
+                   
+
+                    <div class="box">
+                        <div class="box-header">页面</div>
+                        <ul class="unstyled item-list">
+                            <li>
+                                <a href="/photo/all" title="相册">相册</a>
+                            </li>
+                        {%for x in danye%}
+                            <li>
+                                <a href="{{x.url}}" title="{{x.title}}">{{x.title}}</a>
+                            </li>
+                        {%endfor%}
+                        </ul>
+                    </div>
+
+
+                    <div class="box">
+                        <div class="box-header">存档</div>
+                        <ul class="unstyled item-list">
+                        {%for x in archive%}
+                            <li><a href="/{{x.year}}/{{x.month}}">{{x.year}}年{{x.month}}月</a><sup>[{{x.count}}]</sup></li>
+                        {%endfor%}
+                        </ul>
+                    </div>

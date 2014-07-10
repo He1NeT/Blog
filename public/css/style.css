@@ -1,0 +1,98 @@
+body{ font-size: 12px;
+font-family: Lucida,Verdana,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+background-color: #f1f1f1;
+background-image: url('../images/Bg.png');
+background-repeat: repeat;
+background-position: top left;
+background-attachment: fixed;
+
+}
+a {color: black}
+
+.box {
+	margin: 10px 0;
+	border-color: black #BBBBBB #BBBBBB;
+  	border-style: solid;
+    border-width: 1px;
+
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0 0 1px #a6a6a6;
+	-webkit-box-shadow: 0 0 1px #A6A6A6;
+	box-shadow: 0 0 1px #A6A6A6;
+	/*background-color: #fff;*/
+
+}
+.post-show {
+font-size: 14px;
+}
+.box-header{padding: 4px 0 4px 10px;background-color:#464746;font-weight: bold;color:white;
+
+}
+.box  .item-list li,
+.box-warp li { overflow: hidden;white-space: nowrap; line-height: 24px;}
+
+.box ul.item-list {padding-left: 10px;padding-top: 5px;padding-right: 10px;}
+.text-wrap  li{overflow: hidden;white-space: nowrap;}
+
+#post-list ul small {float: right; right: 0;top: 0;display: inline;}
+#post-list li a {float: left;}
+#post-list li {border-bottom: 1px solid #F4F4F4;display: block;line-height: 2em;clear:both;}
+.footer {border-top: 2px solid black;margin-top: 20px;}
+.top-menu {
+	border-bottom: 2px solid #464746;
+}
+/*.top-menu h1{color: black}*/
+.site-title {
+	font-size: 36px;
+    line-height: 40px;
+    color: black;
+    margin: 10px 0;
+    text-rendering: optimizelegibility;
+    font-weight: bold;
+}
+.site-title a:hover{ color: black;text-decoration: none; }
+sup{
+	color:#0088CC;
+}
+
+.about-me {text-align: center;padding: 5px;}
+.about-me ul {text-align: right;margin: 0;list-style-type: none;}
+
+
+/**/
+.breadcrumb {margin-bottom: 0;padding-bottom: 0}
+.post-meta {text-align: center;}
+.post-meta h1{
+	 font-size: 30px;
+    line-height: 40px;
+}
+article {margin: 0 20px;}
+article a,
+
+article a:hover {color: #2C81AA}
+
+.post-body p {line-height: 1.5em;}
+.post-body li {line-height: 24px;}
+.tuijian-read{ background-color: whiteSmoke;border: 1px solid #464746;padding: 0 10px 10px;}
+.tuijian-read ul {margin-left: 20px}
+.tuijian-read li {
+	float: left;width:290px;margin-left: 10px;
+	list-style: url(../images/dot.gif) inside circle;
+}
+/*.search-term ul {list-style-type: square ;}*/
+.post-tag a {margin-left: 10px;}
+.h-20 {min-height: 20px;height: 20px;}
+
+.subcribe-me li {height: 34px;}
+#ds-thread {margin-top: 20px;}
+.box li.active {font-weight: bold;font-size: 160%;}
+.site-tongji strong { width: 100px;display: inline-block;}
+.explanation {
+line-height: 1.5;
+padding: 5px;
+background: #EDEFF4;
+}
+.down-list {margin-top: 30px;}
+.down-list a {color:#0088CC}

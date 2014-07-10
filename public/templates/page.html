@@ -1,0 +1,89 @@
+{%extends 'base.html'%}
+{%block title%}{{article.title}}{%endblock%}
+{%block keywords%}{{article.keyword}}{%endblock%}
+{%block description%}{{article.get_summary|slice:":120"}}{%endblock%}
+{%block css%}{%endblock%}
+
+{%block slide%}
+<div class="clearfix">
+    <ul class="breadcrumb">
+        <li>
+            <a href="/">首页</a>
+            <span class="divider">/</span>
+        </li>
+        <li>
+            <a href="/category/{{article.category.name}}/">{{article.category.name}}</a>
+            <span class="divider">/</span>
+        </li>
+        <li class="active"><a href="{{article.url}}" style="color:#999999;text-decoration: none;">{{article.title}}</a></li>
+    </ul>
+</div>
+{%endblock%}
+
+{%block content%}
+<div class="span9">
+    <article>
+        <div class="post-meta">
+            <h1>{{article.title}}</h1>
+            <p>
+                时间：{{article.post_time|date:"Y-m-d H:i:s"}}  类别：<a href="/category/{{article.category.name}}/">{{article.category.name}}</a>
+                访问: <i id="v-count">{{article.click}}</i>  次
+            </p>
+        </div>
+        <div class="post-body post-show">
+            {{article.contents.all.0.content|safe}}
+			
+            <p class="post-tag"> <strong>标签:</strong> 
+            {%article_tag article%}
+            </p>
+            <p>
+                本文地址:
+                <a href="{{article.url}}">http://eya.cc{{ request.path }}</a> <span>Er1c0rz原创文章，欢迎转载，请附带原文链接</span>
+            </p>
+            
+            <div><script type="text/javascript" id="wumiiRelatedItems"></script></div>
+            
+            <div class="tuijian-read clearfix">
+                <h5>延伸阅读</h5>
+                <ul class="unstyled text-wrap">
+                {%for x in rnews|slice:":10"%}
+                    <li>
+                        <a href="{{x.url}}" target="_blank">{{x.title}}</a>
+                    </li>
+                {%endfor%}
+                </ul>
+            </div>
+        </div>
+    </article>
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"eya"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+<script type="text/javascript">
+    var wumiiPermaLink = "http://eya.cc{{ request.path }}"; 
+    var wumiiTitle = "{{article.title}}"; 
+    var wumiiTags = "{%for x in article.get_tag%}{{x}},{%endfor%}"; 
+    var wumiiSitePrefix = "http://eya.cc/";
+    var wumiiParams = "&num=5&mode=3&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.com/ext/relatedItemsWidget"></script>
+
+
+</div>
+
+{%endblock%}
+
+{%block js%}{%endblock%}

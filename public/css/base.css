@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* 全局定义 */
+body{margin:0;padding:0; font-size:12px; font-family:"宋体";}
+div,ul,li,form,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,input,colgroup,col{margin:0;padding:0;border:none;}
+ul,li{list-style:none;}
+img{border:none; padding:0; margin:0;}
+input,select{font-size:12px;}
+table,td,tr{ margin:0; padding:0;}
+p{ margin:0; padding:0;}
+
+/* 自定义、大小、颜色 */
+.fB{ font-weight:bold;}
+.hidden{ display:none;}
+.left{ float:left;}
+.right{ float:right;}
+.clear{ clear:both;}
+.indent{ text-indent:2em;}
+.noBorder{border:none;}
+.normal{ font-weight:normal}
+.unLine,.unLine a{text-decoration:none;}
+.uLine,.uLine a{ text-decoration:underline;}
+.f11px{ font-size:11px;}
+.f12px{ font-size:12px;}
+.f14px{ font-size:14px;}
+.f15px{ font-size:15px;}
+.f16px{ font-size:16px;}
+.f18px{ font-size:18px;}
+.red{ color:#cc0000;}
+.green{ color:#408537;}
+.blue{ color:#336699;}
+.gray{ color:#666666;}
+.grays{ color:#888888;}
+.yellow{ color:#DEB564;}
+
+
+/* 初始化链接 */
+a {color:#2c2c2c;text-decoration:none;}
+a:visited {color:#2c2c2c;text-decoration:none;}
+a:hover {color:#ba2636;text-decoration: underline;}
+a:active {color:#ba2636;}
+

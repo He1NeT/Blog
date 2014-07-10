@@ -1,0 +1,21 @@
+
+    <!-- <div class="box">
+        <div class="box-header">随机推荐文章</div>
+        <ul class="unstyled item-list">
+        {%for x in rarticles|slice:":5"%}
+            <li>
+                <a href="{{x.url}}" title="{{x.title}}" target="_blank">{{x.title}}</a>
+            </li>
+        {%endfor%}
+        </ul>
+    </div> -->
+    <div class="box">
+        <div class="box-header">热门文章</div>
+        <ul class="unstyled item-list">
+        {%for x in harticles|slice:":5"%}
+            <li>
+                <a href="{{x.url}}" title="{{x.title}}" target="_blank">{{x.title}}</a>
+            </li>
+        {%endfor%}
+        </ul>
+    </div>

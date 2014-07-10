@@ -1,0 +1,91 @@
+{%extends 'base.html'%}
+{%block title%}Er1c0rz博客{%endblock%}
+{%block keywords%}Python Blog{%endblock%}
+{%block description%}Er1c0rz的博客{%endblock%}
+{%block css%}{%endblock%}
+
+{%block slide%}
+<div class="h-20"></div>
+{%endblock%}
+{%block content%}
+<div class="span7">
+    <div class="box post-show">
+        <div class="box-header">
+            Er1c0rz博客最新文章
+        </div>
+        <div id="post-list">
+            <ul class="unstyled item-list">
+                {%for x in items%}
+                <li>
+                    <a href="{{x.url}}" title="{{x.title}}" target="_blank">{{x.title}}</a>
+                    <small>{{x.post_time|date:"m月d日"}}</small>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+        {%if items.has_other_pages%}
+        <div class="pagination pagination-centered pagination-mini">
+            <ul>
+				
+                    {%if items.has_previous%}<li><a href="./?page={{items.previous_page_number}}">上一页</a></li>{%endif%}
+                    {%for p in page_range%}<li {%if p == page%}class="active"{%endif%}><a href="./?page={{p}}" >{{p}}</a></li>{%endfor%}
+                    {%if items.has_next%}<li><a href="./?page={{items.paginator.num_pages}}">下一页</a></li>{%endif%}
+				
+            </ul>
+        </div>
+		{%endif%}
+    </div>
+
+</div>
+
+<div class="span3">
+    
+    <div class="box">
+        <div class="box-header">关于我</div>
+        <div class="about-me">
+            <img src="{{MEDIA_URL}}images/me.jpg" alt="">
+            <ul class>
+                <li> <strong>Er1c0rz</strong>
+                    ,Pythoner，现居深圳{{a}}
+                </li>
+                <li id="mail-here">欢迎给我发邮件咨询</li>
+                <li><iframe width="63" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=63&height=24&uid=2057594952&style=1&btn=light&dpc=1"></iframe></li>
+            </ul>
+        </div>
+    </div>
+    
+{% right_col %}
+ 
+ <div class="box">
+    <div class="box-header">网站统计</div>
+   <ul class="unstyled item-list site-tongji">
+    
+    <li><strong>文章</strong>{{article_count}}篇</li>
+    <li><strong>总访问</strong>{{click_count}}次</li>
+    <li><strong>运行时间</strong>
+    <script language=JavaScript>
+        var urodz= new Date("2/22/2013");
+        var now = new Date();
+        var ile = now.getTime() - urodz.getTime();
+        var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+        document.write(+dni)
+    </script>
+    天</li>
+    </ul>
+</div>
+    
+    <!-- 
+    <div class="box">
+        <div class="box-header">最新评论</div>
+        <ul class="unstyled">
+            <li>
+                <a href="">bonnie: 小水管用户</a>
+            </li>
+        </ul>
+    </div>
+    -->
+</div>
+
+{%endblock%}
+
+{%block js%}{%endblock%}

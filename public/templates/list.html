@@ -1,0 +1,89 @@
+{%extends 'base.html'%}
+{%block title%}{%if is_tag%}{{tag}}专题{%elif is_total%}{{year}}年{{month}}月文章合集{%else%}{{category.name}}{%endif%}{%endblock%}
+{%block keywords%}{%if is_tag%}{{tag}}专题{%elif is_total%}{{year}}年{{month}}月文章合集{%else%}{{category.keywords}}{%endif%}{%endblock%}
+{%block description%}{%if is_tag%}{{tag}}专题{%elif is_total%}{{year}}年{{month}}月文章合集{%else%}{{category.description|slice:":120"}}{%endif%}{%endblock%}
+{%block css%}{%endblock%}
+
+{%block slide%}
+<div class="clearfix">
+    <ul class="breadcrumb">
+        <li>
+            <a href="/">首页</a>
+            <span class="divider">/</span>
+        </li>
+        <li>
+        {%if is_tag%}
+            <a href="/">专题</a>
+            <span class="divider">/</span>
+        {%elif is_total%}
+            <a href="/">文章合集</a>
+            <span class="divider">/</span>
+        {%else%}
+            <a href="/">频道</a>
+            <span class="divider">/</span>
+        {%endif%}
+        </li>
+        <li class="active">
+        {%if is_tag%}
+            {{tag}}
+        {%elif is_total%}
+            {{year}}年{{month}}月文章合集
+        {%else%}
+            <a href="/category/{{category.name}}/" style="color:#999999;text-decoration: none;">{{category.name}}</a>
+        {%endif%}
+        </li>
+    </ul>
+</div>
+{%endblock%}
+{%block content%}
+<div class="span7">
+    <div class="box post-show">
+        <div class="box-header">{%if is_tag%}{{tag}} 专题{%elif is_total%}{{year}}年{{month}}月文章合集 {%else%}{{category.name}} 频道{%endif%}</div>
+        <div id="post-list">
+            <ul class="unstyled item-list">
+                {%for x in items%}
+                <li>
+                    <a href="{{x.url}}" title="{{x.title}}" target="_blank">{{x.title}}</a>
+                    <small>{{x.post_time|date:"m月d日"}}</small>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+        {%if items.has_other_pages%}
+        <div class="pagination pagination-centered pagination-mini">
+            <ul>
+                    {%if items.has_previous%}<li><a href="./?page={{items.previous_page_number}}">上一页</a></li>{%endif%}
+                    {%for p in page_range%}<li {%if p == page%}class="active"{%endif%}><a href="./?page={{p}}" >{{p}}</a></li>{%endfor%}
+                    {%if items.has_next%}<li><a href="./?page={{items.paginator.num_pages}}">下一页</a></li>{%endif%}
+				
+            </ul>
+        </div>
+		{%endif%}
+    </div>
+
+</div>
+
+<div class="span3">
+    <div class="box">
+        <div class="box-header">热门标签</div>
+        <ul class="unstyled item-list tag-cloud">
+            {% all_articles_tag %}
+        </ul>
+    </div>
+{% right_col %}
+ 
+    <!-- 
+    <div class="box">
+        <div class="box-header">最新评论</div>
+        <ul class="unstyled">
+            <li>
+                <a href="">bonnie: 小水管用户</a>
+            </li>
+        </ul>
+    </div>
+    -->
+</div>
+
+{%endblock%}
+
+{%block js%}{%endblock%}

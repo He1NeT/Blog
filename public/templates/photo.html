@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Er1c0rz相册</title>
+	<meta name="Keywords" content="Er1c0rz相册">
+	<meta name="Description" content="Er1c0rz相册">
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/bootstrap.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/base.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/photostyle.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/imgbox.css" media="all" />
+	<script type="text/javascript" src="{{MEDIA_URL}}js/jquery1.3.min.js"></script>
+	<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.imgbox.pack.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".photo").imgbox({
+				'speedIn'		: 0,
+				'speedOut'		: 0,
+				'alignment'		: 'center',
+				'overlayShow'	: true,
+				'allowMultiple'	: false
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="header">
+		<div class="left_link left">
+			<a href="{%url index%}" class="t1">首页</a>
+			<a href="/photo/all" class="t1">全部</a>
+			{%for x in photocateies%}
+			<a href="/photo/{{x.name}}" class="t1">{{x.name}}</a>
+			{%endfor%}
+		</div>
+	</div>
+	<div class="content container">
+		<div class="row">
+			<div class="span12">
+				<ul class="box">
+					{%for x in items%}
+					<li><a class="photo" title="{{x.name}}" href="{{x.gallery.url}}"><img src="{%if x.small_gallery%}{{x.small_gallery|thumb:"140x0"}}{%else%}{{x.gallery|thumb:"140x140"}}{%endif%}" class="img-polaroid" width="140" height="140"/></a></li>
+					{%endfor%}
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

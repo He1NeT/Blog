@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <meta name="keywords" content="{%block keywords%}{%endblock%}" />
+    <meta name="description" content="{%block description%}{%endblock%}" />
+    <meta name="wumiiVerification" content="ce6ed7cd-9838-415b-b91d-55aa8e81a9c2" />
+    <link rel="canonical" href="http://eya.cc"/>
+
+    <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/bootstrap.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/style.css" media="all">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var s= 'Email:<a href="mailto:he1net+163.com">he1net+163.com</a>';
+            $('#mail-here').html(s.replace(/\+/g,'@'));
+        });
+    </script>
+    
+    {%block css%}{%endblock%}
+</head>
+
+<body>
+     
+    <div class="container">
+        <div class="top-menu">
+            <div class="site-title">
+                <a href="/">Er1c0rz的博客</a>
+            </div>
+        </div>
+        <div class="main">
+{%block slide%}{%endblock%}
+            <div class="row">
+                <div class="span2">
+                    {% left_col %}
+                </div>
+
+{%block content%}
+
+{%endblock%}
+
+            </div>
+        </div>
+        
+    <div class="footer">
+        <p>Copyright © 2012-{%now "Y"%}  <a href="/">程序员:</a> <a href="/">Er1c0rz</a>   <br/>
+        Powerd by Django/<a href="/category/python">Python</a>
+        </p>
+    </div>
+    <div style="display:none">
+    <script src="http://s96.cnzz.com/stat.php?id=4910549&web_id=4910549" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>
+{%block js%}{%endblock%}					

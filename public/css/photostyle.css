@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ font:12px/1.5 tahoma,arial,\5b8b\4f53; background:#ffffff;}
+
+/* Header */
+.header{ height:42px; width:100%; background:#484E58; border-bottom:1px solid #3A404A; margin:0 auto; z-index: 100; top: 0px; position:fixed;_position: absolute; _top: expression(documentElement.scrollTop + "px"); left:0;}
+.left_link a{ float:left; font-size:13px; text-align:center; width:100px; border-right:1px solid #3A404A; height:42px; line-height:42px; text-decoration:none; }
+.left_link a.t1{ color:#C4C7CC;}
+.left_link a:hover.t1{ color:#C4C7CC; background:#5A5F68;}
+.left_link a.current{ color:#C4C7CC; background:#5A5F68;}
+.right_link a{ float:left; font-size:13px; text-align:center; width:80px; border-left:1px solid #3A404A; height:42px; line-height:42px; text-decoration:none; }
+.right_link a.t1{ color:#C4C7CC;}
+.right_link a:hover.t1{ color:#C4C7CC; background:#5A5F68;}
+.right_link a.current{ color:#C4C7CC; background:#5A5F68;}
+
+/* Content  */
+.container{padding-top: 50px;} 
+.container .box li {float:left;width:140px; height:140px; margin:8px 8px;}
